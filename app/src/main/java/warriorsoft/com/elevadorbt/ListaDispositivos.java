@@ -78,7 +78,7 @@ public class ListaDispositivos extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"No hay dispositivos conectados",Toast.LENGTH_LONG).show();
         }
 
-        final ArrayAdapter adaptador = new ArrayAdapter(getApplicationContext(),android.R.layout.simple_list_item_1,lista);
+        final ArrayAdapter adaptador = new ArrayAdapter(ListaDispositivos.this,android.R.layout.simple_list_item_1,lista);
         listaDispositivos.setAdapter(adaptador);
         listaDispositivos.setOnItemClickListener(myListClickListener);
 

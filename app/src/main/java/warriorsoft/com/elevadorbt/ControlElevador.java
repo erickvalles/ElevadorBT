@@ -40,6 +40,9 @@ public class ControlElevador extends AppCompatActivity implements View.OnClickLi
         btn2 = findViewById(R.id.btnPiso2);
         btn3 = findViewById(R.id.btnPiso3);
 
+        btn1.setOnClickListener(this);
+        btn2.setOnClickListener(this);
+        btn3.setOnClickListener(this);
 
         new ConectarBT().execute();
 
@@ -129,6 +132,7 @@ public class ControlElevador extends AppCompatActivity implements View.OnClickLi
         if(btSocket != null){
             try{
                 btSocket.getOutputStream().write(piso.toString().getBytes());
+                Toast.makeText(getApplicationContext(),"Yendo al piso "+piso,Toast.LENGTH_SHORT).show();
             }catch (IOException e){
                 mensaje("Error"+e.getMessage());
             }
